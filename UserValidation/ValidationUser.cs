@@ -11,7 +11,9 @@ namespace UserValidation
     {
         string uc1firstname = "^[A-Z]{1}[a-z]{2,}$";
         string uc2lastname  = "^[A-Z]{1}[a-z]{2,}$";
-        string uc3email = "^[a-z0-9]{1,}[._+-]{0,1}[a-z0-9]{0,}[@]{1}[a-z0-9]{1,}[.]{1}[a-z]{2,}[.]{0,1}[a-z]{0,}$";
+        string uc3email     = "^[a-z0-9]{1,}[._+-]{0,1}[a-z0-9]{0,}[@]{1}[a-z0-9]{1,}[.]{1}[a-z]{2,}[.]{0,1}[a-z]{0,}$";
+        string uc4mobile    = "^[0-9]{2}[ ][0-9]{10}$";
+
 
         public void uc1Validation(string input)
         {
@@ -32,6 +34,14 @@ namespace UserValidation
         public void uc3Validation(string input)
         {
             bool result = Regex.IsMatch(input, uc3email);
+            if (result)
+                Console.WriteLine("Valid");
+            else
+                Console.WriteLine("! inValid");
+        }
+        public void uc4Validation(string input)
+        {
+            bool result = Regex.IsMatch(input, uc4mobile);
             if (result)
                 Console.WriteLine("Valid");
             else
