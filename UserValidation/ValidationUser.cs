@@ -13,7 +13,7 @@ namespace UserValidation
         string uc2lastname  = "^[A-Z]{1}[a-z]{2,}$";
         string uc3email     = "^[a-z0-9]{1,}[._+-]{0,1}[a-z0-9]{0,}[@]{1}[a-z0-9]{1,}[.]{1}[a-z]{2,}[.]{0,1}[a-z]{0,}$";
         string uc4mobile    = "^[0-9]{2}[ ][0-9]{10}$";
-        string uc5password  = "^[A-Z]{1}[a-z]{8,}[0-9]{1,8}$";
+        string uc5password  = "^[A-Z]{1}[a-z]{8,}[@#$]{1}[0-9]{1,8}$";
 
 
         public void uc1Validation(string input)
