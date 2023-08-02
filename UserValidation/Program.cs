@@ -22,7 +22,7 @@ internal class Program
 
         Console.WriteLine("UC5 Password");
         ValidationUser pass = new ValidationUser();
-        pass.uc5Validation("qwertyuiop");
+        pass.uc5Validation("Qwertyuiop");
 
     }
 
