@@ -16,10 +16,13 @@ internal class Program
         ValidationUser email = new ValidationUser();
         email.uc3Validation("nithin@reddy.com");
 
-
         Console.WriteLine("UC4 PhoneNumber");
         ValidationUser num = new ValidationUser();
         num.uc4Validation("91 1234567890");
+
+        Console.WriteLine("UC5 Password");
+        ValidationUser pass = new ValidationUser();
+        pass.uc5Validation("Qwerty12");
 
     }
 
