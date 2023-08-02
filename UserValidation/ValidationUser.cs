@@ -10,7 +10,8 @@ namespace UserValidation
     public class ValidationUser
     {
         string uc1firstname = "^[A-Z]{1}[a-z]{2,}$";
-        string uc2lastname = "^[A-Z]{1}[a-z]{2,}$";
+        string uc2lastname  = "^[A-Z]{1}[a-z]{2,}$";
+        string uc3email = "^[a-z0-9]{1,}[._+-]{0,1}[a-z0-9]{0,}[@]{1}[a-z0-9]{1,}[.]{1}[a-z]{2,}[.]{0,1}[a-z]{0,}$";
 
         public void uc1Validation(string input)
         {
@@ -23,6 +24,14 @@ namespace UserValidation
         public void uc2Validation(string input)
         {
             bool result = Regex.IsMatch(input, uc2lastname);
+            if (result)
+                Console.WriteLine("Valid");
+            else
+                Console.WriteLine("! inValid");
+        }
+        public void uc3Validation(string input)
+        {
+            bool result = Regex.IsMatch(input, uc3email);
             if (result)
                 Console.WriteLine("Valid");
             else

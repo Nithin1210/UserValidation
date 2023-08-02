@@ -12,6 +12,10 @@ internal class Program
         ValidationUser lastname = new ValidationUser();
         lastname.uc2Validation("Reddy");
 
+        Console.WriteLine("UC3 Email");
+        ValidationUser email = new ValidationUser();
+        email.uc3Validation("nithin@reddy.com");
+
     }
 
 }
