@@ -26,7 +26,7 @@ public class Program
         ValidationUser pass = new ValidationUser();
         pass.uc5Validation("Qwertyuiop@123");
 
-        Console.WriteLine("\nAll Emails check !! \nSample Emails to Check !!");
+        Console.WriteLine("\nAll Emails check ! with ! Sample Emails !!");
         ValidationUser Email = new ValidationUser();
         foreach (string emails in allemails)
         {

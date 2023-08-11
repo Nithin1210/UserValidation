@@ -15,47 +15,71 @@ namespace UserValidation
         string uc4mobile    = "^[0-9]{2}[ ][0-9]{10}$";
         string uc5password  = "^[A-Z]{1}[a-z]{8,}[@#$]{1}[0-9]{1,8}$";
 
-        public void uc1Validation(string input)
+        public bool uc1Validation(string name)
         {
-            bool result = Regex.IsMatch(input, uc1firstname);
-            if (result)
+            if (Regex.IsMatch(name, uc1firstname))
+            {
                 Console.WriteLine("Valid");
+                return true;
+            }
             else
-                Console.WriteLine("! inValid");
+            {
+                Console.WriteLine("In valid");
+                return false;
+            }
         }
-        public void uc2Validation(string input)
+        public bool uc2Validation(string name)
         {
-            bool result = Regex.IsMatch(input, uc2lastname);
-            if (result)
+            if (Regex.IsMatch(name, uc2lastname))
+            {
                 Console.WriteLine("Valid");
+                return true;
+            }
             else
-                Console.WriteLine("! inValid");
+            {
+                Console.WriteLine("In valid");
+                return false;
+            }
         }
-        public void uc3Validation(string input)
+        public bool uc3Validation(string mail)
         {
-            bool result = Regex.IsMatch(input, uc3email);
-            if (result)
+            if (Regex.IsMatch(mail, uc3email))
+            {
                 Console.WriteLine("Valid");
+                return true;
+            }
             else
-                Console.WriteLine("! inValid");
+            {
+                Console.WriteLine("In valid");
+                return false;
+            }
         }
-        public void uc4Validation(string input)
+        public bool uc4Validation(string number)
         {
-            bool result = Regex.IsMatch(input, uc4mobile);
-            if (result)
+            if (Regex.IsMatch(number, uc4mobile))
+            {
                 Console.WriteLine("Valid");
+                return true;
+            }
             else
-                Console.WriteLine("! inValid");
+            {
+                Console.WriteLine("In valid");
+                return false;
+            }
         }
-        public void uc5Validation(string input)
+        public bool uc5Validation(string password)
         {
-            bool result = Regex.IsMatch(input, uc5password);
-            if (result)
+            if (Regex.IsMatch(password, uc5password))
+            {
                 Console.WriteLine("Valid");
+                return true;
+            }
             else
-                Console.WriteLine("! inValid");
+            {
+                Console.WriteLine("In valid");
+                return false;
+            }
         }
-
 
     }
 
