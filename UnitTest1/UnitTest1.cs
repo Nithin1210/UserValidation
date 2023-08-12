@@ -4,6 +4,7 @@ namespace UserRegistrationTest
 {
     public class Tests
     {
+        static string[] Allemails = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" };
 
         [Test]
         public void TestFirstName()
@@ -49,6 +50,16 @@ namespace UserRegistrationTest
             Assert.IsTrue(valid);
             bool invalid = userReg.uc5Validation("abcdE");
             Assert.IsFalse(invalid);
+        }
+                [Test]
+        public void TestSampleEmails()
+        {
+            ValidationUser userReg = new ValidationUser();
+            foreach (string s in Allemails)
+            {
+                bool valid = userReg.uc3Validation(s);
+                Assert.IsTrue(valid);
+            }
         }
     }
 }
