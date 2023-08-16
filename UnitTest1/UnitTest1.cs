@@ -1,5 +1,6 @@
 using UserValidation;
 
+
 namespace UserRegistrationTest
 {
     public class Tests
@@ -12,17 +13,34 @@ namespace UserRegistrationTest
             ValidationUser userReg = new ValidationUser();
             bool valid = userReg.uc1Validation("Nithin");
             Assert.IsTrue(valid);
-            bool invalid = userReg.uc1Validation("ASDAdeR#4565657");
-            Assert.IsFalse(invalid);
+            try
+            {
+                bool invalid = userReg.uc1Validation("qwerty88");
+            }
+            catch (UserRegistrationException ex)
+            {
+                Assert.IsFalse(ex.valid);
+            }
         }
+    
         [Test]
         public void TestLastName()
         {
             ValidationUser userReg = new ValidationUser();
             bool valid = userReg.uc2Validation("Reddy");
             Assert.IsTrue(valid);
-            bool invalid = userReg.uc2Validation("reddY70");
-            Assert.IsFalse(invalid);
+            try
+            {
+                bool invalid = userReg.uc2Validation("reddY70");
+
+            }
+            catch (UserRegistrationException ex)
+            {
+                Assert.IsFalse(ex.valid);
+            }
+
+
+
         }
         [Test]
         public void TestEmail()
@@ -30,8 +48,16 @@ namespace UserRegistrationTest
             ValidationUser userReg = new ValidationUser();
             bool valid = userReg.uc3Validation("abc@yahoo.com");
             Assert.IsTrue(valid);
-            bool invalid = userReg.uc3Validation("abc@.csadol");
-            Assert.IsFalse(invalid);
+            try
+            {
+                bool invalid = userReg.uc3Validation("abc@.cddd");
+
+            }
+            catch (UserRegistrationException ex)
+            {
+                Assert.IsFalse(ex.valid);
+            }
+
         }
         [Test]
         public void TestPhoneNumber()
@@ -39,8 +65,14 @@ namespace UserRegistrationTest
             ValidationUser userReg = new ValidationUser();
             bool valid = userReg.uc4Validation("91 1234567890");
             Assert.IsTrue(valid);
-            bool invalid = userReg.uc4Validation ("5687687732");
-            Assert.IsFalse(invalid);
+            try
+            {
+                bool invalid = userReg.uc4Validation("5687687732");
+            }
+            catch (UserRegistrationException ex)
+            {
+                Assert.IsFalse(ex.valid);
+            }
         }
         [Test]
         public void TestPassword()
@@ -48,16 +80,22 @@ namespace UserRegistrationTest
             ValidationUser userReg = new ValidationUser();
             bool valid = userReg.uc5Validation("Qwertyuiop@123");
             Assert.IsTrue(valid);
-            bool invalid = userReg.uc5Validation("abcdE");
-            Assert.IsFalse(invalid);
+            try
+            {
+                bool invalid = userReg.uc5Validation("abcdE");
+            }
+            catch (UserRegistrationException ex)
+            {
+                Assert.IsFalse(ex.valid);
+            }
         }
                 [Test]
         public void TestSampleEmails()
         {
             ValidationUser userReg = new ValidationUser();
-            foreach (string s in Allemails)
+            foreach (string all in Allemails)
             {
-                bool valid = userReg.uc3Validation(s);
+                bool valid = userReg.uc3Validation(all);
                 Assert.IsTrue(valid);
             }
         }

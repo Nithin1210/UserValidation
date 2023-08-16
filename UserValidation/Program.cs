@@ -1,5 +1,7 @@
-﻿using UserValidation;
+﻿using System;
+using System.Windows.Markup;
 
+namespace UserValidation;
 public class Program
 {
     static string[] allemails = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" };
