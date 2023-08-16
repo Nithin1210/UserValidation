@@ -80,6 +80,11 @@ namespace UserValidation
                 return false;
             }
         }
+        public bool ValidateFirstNameRegex(string input) => Regex.IsMatch(input, uc1firstname) ? true : false;
+        public bool ValidateLastNameRegex(string input) => Regex.IsMatch(input, uc2lastname) ? true : false;
+        public bool ValidateEmailRegex(string input) => Regex.IsMatch(input,uc3email ) ? true : false;
+        public bool ValidateMobileRegex(string input) => Regex.IsMatch(input, uc4mobile) ? true : false;
+        public bool ValidatePasswordRegex(string input) => Regex.IsMatch(input, uc5password) ? true : false;
 
     }
 
